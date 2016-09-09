@@ -7,6 +7,6 @@ namespace UmRioCheckout.Models
 {
     public class Plans
     {
-                public List<int> plan { get; set; }
+        public List<int> plan { get; set; }
     }
 }

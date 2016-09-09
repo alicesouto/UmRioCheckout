@@ -27,71 +27,30 @@ namespace UmRioCheckout.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Name,Email,CreditCard")] Partner partner)
+        public ActionResult Create([Bind(Include = "Name, Email, CreditCard")]Partner partner)
         {
             if (ModelState.IsValid)
             {
+                var partnerManager = new PartnerManager();
+
+                partnerManager.VerifyPartner(partner);
 
                 return RedirectToAction("Thank");
 
+            }
 
-                Buyer buyer = new Buyer()
-                {
-                    Email = partner.Email,
-                    Name = partner.Name,
-                };
-                // Cria a transação.
-                var transaction = new CreditCardTransaction()
-                {
-                    AmountInCents = 1000,
-                    CreditCard = new GatewayApiClient.DataContracts.CreditCard()
-                    {
-                        CreditCardBrand = CreditCardBrandEnum.Visa,
-                        CreditCardNumber = partner.CreditCard.Number,
-                        ExpMonth = partner.CreditCard.ExpiryDate.Month,
-                        ExpYear = partner.CreditCard.ExpiryDate.Year,
-                        HolderName = partner.Name,
-                        SecurityCode = partner.CreditCard.Cvv
-                    },
-                    InstallmentCount = 1
-                };
-
-                // Cria requisição.
-                var createSaleRequest = new CreateSaleRequest()
-                {
-                    // Adiciona a transação na requisição.
-                    CreditCardTransactionCollection = new Collection<CreditCardTransaction>(new CreditCardTransaction[] { transaction }),
-                    Order = new Order()
-                    {
-                        OrderReference = "NumeroDoPedido"
-                    }
-                };
-
-                // Coloque a sua MerchantKey aqui.
-                Guid merchantKey = Guid.Parse("d1c7c0da-7d89-472b-b0a0-bee156c79dd2");
-
-                // Cria o client que enviará a transação.
-                var serviceClient = new GatewayServiceClient(merchantKey, new Uri("https://sandbox.mundipaggone.com"));
-
-                // Autoriza a transação e recebe a resposta do gateway.
-                var httpResponse = serviceClient.Sale.Create(createSaleRequest);
-
-                Console.WriteLine("Código retorno: {0}", httpResponse.HttpStatusCode);
-                //Console.WriteLine("Chave do pedido: {0}", httpResponse.Response.OrderResult.OrderKey);
-                if (httpResponse.Response.CreditCardTransactionResultCollection != null)
-                {
-                    Console.WriteLine("Status transação: {0}", httpResponse.Response.CreditCardTransactionResultCollection.FirstOrDefault().CreditCardTransactionStatus);
-                }
-
+            else
+            {
+                var errors = ModelState.Select(x => x.Value.Errors)
+                           .Where(y => y.Count > 0)
+                           .ToList();
             }
 
             return View(partner);
         }
 
-        // PUT: Partners/Thank
-        public ActionResult Thank(Partner partner)
+        public ActionResult Thank()
         {
-            ViewData["Name"] = partner.Name;
             return View();
         }
     }

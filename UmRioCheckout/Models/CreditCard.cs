@@ -10,20 +10,13 @@ namespace UmRioCheckout.Models
     public class CreditCard
     {
         [Display(Name = "Credit Card Number")]
-        [StringLength(16, MinimumLength = 16)]
+        [StringLength(20, MinimumLength = 20)]
         [Required]
         public string Number { get; set; }
 
-        public struct ExpiryDateType {
-            [Range(1,12)]
-            public int Month { get; set; }
-            [Range(00, 99)]
-            public int Year { get; set; }
-        }
-
         [Display(Name = "Expiry Date")]
         [Required]
-        public ExpiryDateType ExpiryDate = new ExpiryDateType();
+        public string ExpiryDate { get; set; }
 
         [Display(Name = "Security Code")]
         [StringLength(3, MinimumLength = 3)]

@@ -22,9 +22,9 @@ namespace UmRioCheckout.Models
 
     public class FactorViewModel
     {
-        public string Purpose { get; set; }
+        public string Purpose { get; set; 
+}
     }
-
     public class SetPasswordViewModel
     {
         [Required]
