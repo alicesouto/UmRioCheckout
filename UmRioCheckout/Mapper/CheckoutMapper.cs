@@ -35,7 +35,7 @@ namespace UmRioCheckout.Models
             expiryDate.Year = partner.CreditCard.ExpiryDate.Substring(2 + 3); // MONTH_LENTH+1 + space + /
 
             // Cria a transação
-            transaction.AmountInCents = 1000;
+            transaction.AmountInCents = partner.Plan;
             transaction.CreditCard = new GatewayApiClient.DataContracts.CreditCard();
             transaction.CreditCard.CreditCardBrand = CreditCardBrandEnum.Visa;
             transaction.CreditCard.CreditCardNumber = partner.CreditCard.Number;

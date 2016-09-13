@@ -6,10 +6,10 @@
 
 <h2>Donate</h2>
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -31,10 +31,10 @@
 
         <div class="form-group">
             <div class="card-wrapper"></div>
-                @Html.LabelFor(model => model.CreditCard.Number, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                   <input type="text" name="CreditCard.Number"/>
-                </div>
+            @Html.LabelFor(model => model.CreditCard.Number, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input type="text" name="CreditCard.Number" />
+            </div>
         </div>
 
         <div class="form-group">
@@ -52,11 +52,23 @@
         </div>
 
         <div class="form-group">
+            @Html.LabelFor(model => model.Plan, htmlAttributes: new { @class = "control-label col-md-2" })
+            @foreach (var Plan in (List<int>)ViewBag.DonationPlans)
+            {
+                <div class="col-md-10">
+                    <input type="radio" name="Plan" />
+                    R$@Plan
+                </div>
+            }
+        </div>
+
+        <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Donate" class="btn btn-default" />
             </div>
         </div>
-</div>
+    </div>
+
 }
 
 @section Scripts {

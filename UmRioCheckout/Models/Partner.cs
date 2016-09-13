@@ -17,5 +17,9 @@ namespace UmRioCheckout.Models
 
         [Required]
         public string Email { get; set; }
+
+        [Display(Name = "Donation plan:")]
+        [Required]
+        public int Plan { get; set; }
     }
 }

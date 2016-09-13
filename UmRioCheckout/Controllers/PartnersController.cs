@@ -19,6 +19,8 @@ namespace UmRioCheckout.Controllers
         // GET: Partners/Create
         public ActionResult Create()
         {
+            var Plans = new DonationPlans();
+            ViewBag.DonationPlans = Plans.Amount;
             return View();
         }
 
@@ -37,13 +39,6 @@ namespace UmRioCheckout.Controllers
 
                 return RedirectToAction("Thank");
 
-            }
-
-            else
-            {
-                var errors = ModelState.Select(x => x.Value.Errors)
-                           .Where(y => y.Count > 0)
-                           .ToList();
             }
 
             return View(partner);

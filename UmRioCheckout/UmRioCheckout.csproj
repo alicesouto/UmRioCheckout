@@ -207,13 +207,15 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Mapper\CheckoutMapper.cs" />
+    <Compile Include="Manager\PlansManager.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\DonationPlansEnum.cs" />
     <Compile Include="Models\CreditCard.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Partner.cs" />
-    <Compile Include="Models\PartnerManager.cs" />
-    <Compile Include="Models\Plans.cs" />
+    <Compile Include="Manager\PartnerManager.cs" />
+    <Compile Include="Models\DonationPlans.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Utilities\ConfigurationUtility.cs" />
