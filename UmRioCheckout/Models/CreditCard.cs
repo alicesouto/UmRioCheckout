@@ -22,6 +22,8 @@ namespace UmRioCheckout.Models
         [StringLength(3, MinimumLength = 3)]
         public string Cvv { get; set; }
 
+        [Display(Name = "Holder Name")]
+        public string Name { get; set; }
 
     }
 }

@@ -20,6 +20,6 @@ namespace UmRioCheckout.Models
 
         [Display(Name = "Donation plan:")]
         [Required]
-        public int Plan { get; set; }
+        public int Plan { get; set; } //Amount in Cents
     }
 }

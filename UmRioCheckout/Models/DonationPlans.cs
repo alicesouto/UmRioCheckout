@@ -11,9 +11,9 @@ namespace UmRioCheckout.Models
     {
         public DonationPlans()
         {
-            Amount = new List<int>();
-            Amount.Add(1000);
-            Amount.Add(3000);
+            Amount = new List<double>();
+            Amount.Add(10.50);
+            Amount.Add(30.00);
         }
         
         // Implementation for the GetEnumerator method.
@@ -27,6 +27,6 @@ namespace UmRioCheckout.Models
             return new DonationPlansEnum(Amount);
         }
 
-        public List<int> Amount { get; set; }
+        public List<double> Amount { get; set; }
     }
 }

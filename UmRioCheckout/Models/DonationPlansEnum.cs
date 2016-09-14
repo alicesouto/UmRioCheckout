@@ -12,9 +12,9 @@ namespace UmRioCheckout.Models
         // Enumerators are positioned before the first element
         // until the first MoveNext() call.
         int position = -1;
-        private List<int> plans;
+        private List<double> plans;
 
-        public DonationPlansEnum(List<int> list)
+        public DonationPlansEnum(List<double> list)
         {
             plans = list;
         }

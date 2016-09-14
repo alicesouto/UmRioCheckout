@@ -29,7 +29,7 @@ namespace UmRioCheckout.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Name, Email, CreditCard")]Partner partner)
+        public ActionResult Create([Bind(Include = "Name, Email, CreditCard, Plan")]Partner partner)
         {
             if (ModelState.IsValid)
             {
@@ -38,9 +38,7 @@ namespace UmRioCheckout.Controllers
                 partnerManager.VerifyPartner(partner);
 
                 return RedirectToAction("Thank");
-
             }
-
             return View(partner);
         }
 
