@@ -8,17 +8,21 @@ using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Threading;
 using System.Web;
 using System.Web.Mvc;
 using UmRioCheckout.Models;
+using UmRioCheckout.Utilities;
 
 namespace UmRioCheckout.Controllers
 {
-    public class PartnersController : Controller
+    public class PartnersController : LanguageController
     {
         // GET: Partners/Create
-        public ActionResult Create()
+        public ActionResult Create(string culture)
         {
+            this.SetCulture(culture);
+
             var Plans = new DonationPlans();
             ViewBag.DonationPlans = Plans.Amount;
             return View();
@@ -33,6 +37,9 @@ namespace UmRioCheckout.Controllers
         {
             if (ModelState.IsValid)
             {
+                var Plans = new DonationPlans();
+                ViewBag.DonationPlans = Plans.Amount;
+
                 var partnerManager = new PartnerManager();
 
                 partnerManager.VerifyPartner(partner);
@@ -45,6 +52,29 @@ namespace UmRioCheckout.Controllers
         public ActionResult Thank()
         {
             return View();
+        }
+
+        public void SetCulture(string culture)
+        {
+            // Validate input
+            string cultureName = CultureHelper.GetImplementedCulture(culture);
+            // Save culture in a cookie
+            HttpCookie cookie = Request.Cookies["_culture"];
+            if (cookie != null)
+                cookie.Value = cultureName;   // update cookie value
+            else
+            {
+                cookie = new HttpCookie("_culture");
+                cookie.Value = cultureName;
+                cookie.Expires = DateTime.Now.AddYears(1);
+            }
+
+            // Modify current thread's cultures            
+            Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo(cultureName);
+            Thread.CurrentThread.CurrentUICulture = Thread.CurrentThread.CurrentCulture;
+            
+            Response.Cookies.Add(cookie);
+
         }
     }
 }

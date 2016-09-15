@@ -13,7 +13,7 @@ using UmRioCheckout.Models;
 namespace UmRioCheckout.Controllers
 {
     [Authorize]
-    public class AccountController : Controller
+    public class AccountController : LanguageController
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;

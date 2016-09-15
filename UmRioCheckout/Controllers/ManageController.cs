@@ -11,7 +11,7 @@ using UmRioCheckout.Models;
 namespace UmRioCheckout.Controllers
 {
     [Authorize]
-    public class ManageController : Controller
+    public class ManageController : LanguageController
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;

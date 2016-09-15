@@ -1,10 +1,31 @@
 ﻿@model UmRioCheckout.Models.Partner
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = Resources.Donate;
 }
 
-<h2>Donate</h2>
+<h2>@Resources.Donate</h2>
+
+@using (Html.BeginForm("SetCulture", "PartnersController"))
+{
+    <fieldset>
+        <legend>@Resources.ChooseYourLanguage</legend>
+        <div class="control-group">
+            <div class="controls">
+                <label for="en-US">
+                    <a href="?culture=en-US">en-US</a>
+                </label>
+            </div>
+        </div>
+        <div class="control-group">
+            <div class="controls">
+                <label for="pt-BR">
+                    <a href="?culture=pt-BR">pt-BR</a>
+                </label>
+            </div>
+        </div>
+    </fieldset>
+}
 
 @using (Html.BeginForm())
 {
@@ -63,8 +84,8 @@
             @foreach (var Plan in (List<double>)ViewBag.DonationPlans)
             {
                 <div class="col-md-10">
-                    R$@Plan
-                    @Html.RadioButtonFor(model => model.Plan, (int) 100*@Plan, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Resources.Currency@Plan
+                    @Html.RadioButtonFor(model => model.Plan, (int)100 * @Plan, htmlAttributes: new { @class = "control-label col-md-2" })
                     @Html.ValidationMessageFor(model => model.Plan, "", new { @class = "text-danger" })
                 </div>
             }
@@ -72,11 +93,10 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Donate" class="btn btn-default" />
+                <input type="submit" value="@Resources.Donate" class="btn btn-default" />
             </div>
         </div>
     </div>
-
 }
 
 @section Scripts {

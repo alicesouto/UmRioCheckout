@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace UmRioCheckout.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : LanguageController
     {
         public ActionResult Index()
         {

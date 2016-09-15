@@ -9,17 +9,18 @@ namespace UmRioCheckout.Models
 {
     public class Partner 
     {
-        [Required]
+        [Required(ErrorMessageResourceType = typeof(Resources.Resources), ErrorMessageResourceName = "Required")]
         public CreditCard CreditCard { get; set; }
 
-        [Required]
+        [Display(Name = "Name", ResourceType = typeof(Resources.Resources))]
+        [Required(ErrorMessageResourceType = typeof(Resources.Resources), ErrorMessageResourceName = "Required")]
         public string Name { get; set; }
 
-        [Required]
+        [Required(ErrorMessageResourceType = typeof(Resources.Resources), ErrorMessageResourceName = "Required")]
         public string Email { get; set; }
 
-        [Display(Name = "Donation plan:")]
-        [Required]
+        [Display(Name = "DonationPlan", ResourceType = typeof(Resources.Resources))]
+        [Required(ErrorMessageResourceType = typeof(Resources.Resources), ErrorMessageResourceName = "Required")]
         public int Plan { get; set; } //Amount in Cents
     }
 }
