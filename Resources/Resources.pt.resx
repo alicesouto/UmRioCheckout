@@ -127,7 +127,7 @@
     <value>Nome do Portador</value>
   </data>
   <data name="CCNumber" xml:space="preserve">
-    <value>Número do Cartão de Crédito</value>
+    <value>N° do Cartão de Crédito</value>
   </data>
   <data name="CCNumberLength" xml:space="preserve">
     <value>número do cartão de crédito deve conter 16 caracteres</value>
