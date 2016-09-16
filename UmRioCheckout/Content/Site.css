@@ -16,6 +16,16 @@
     white-space: normal;
 }
 
+.default-header-right {
+    float: right;
+    margin-right: 40px;
+}
+
+.default-header-left {
+    float: left;
+    padding: 10px;
+}
+
 /* Set width on the form input elements since they're 100% wide by default */
 input,
 select,

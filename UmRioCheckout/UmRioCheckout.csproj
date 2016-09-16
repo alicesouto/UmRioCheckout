@@ -227,6 +227,8 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\css\bootstrap-rtl.css" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\images\pt-BR.GIF" />
+    <Content Include="Content\images\en-US.png" />
     <Content Include="Scripts\affix.js" />
     <Content Include="Scripts\alert.js" />
     <Content Include="Scripts\bootstrap-rtl.js" />

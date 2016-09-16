@@ -14,14 +14,14 @@ namespace UmRioCheckout.Utilities
         private static readonly List<string> _cultures = new List<string> {
         "en-US",  // first culture is the DEFAULT
         "pt-BR", // Portuguese - portuguese NEUTRAL culture        
-    };
+        };
+
         /// <summary>
         /// Returns true if the language is a right-to-left language. Otherwise, false.
         /// </summary>
         public static bool IsRighToLeft()
         {
             return System.Threading.Thread.CurrentThread.CurrentCulture.TextInfo.IsRightToLeft;
-
         }
         /// <summary>
         /// Returns a valid culture name based on "name" parameter. If "name" is not valid, it returns the default culture "en-US"
