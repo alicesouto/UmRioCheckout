@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="BadRequest" xml:space="preserve">
+    <value>Invalid request</value>
+  </data>
   <data name="CCCvvLength" xml:space="preserve">
     <value>credit card security code must have 3 characteres</value>
   </data>
@@ -146,6 +149,15 @@
   </data>
   <data name="DonationPlan" xml:space="preserve">
     <value>Dontation Plan</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="ExceptionError" xml:space="preserve">
+    <value>Unexpected Error</value>
+  </data>
+  <data name="InvalidMerchantKey" xml:space="preserve">
+    <value>Invalid Merchant Key</value>
   </data>
   <data name="Name" xml:space="preserve">
     <value>Name</value>

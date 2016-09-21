@@ -23,7 +23,7 @@ namespace UmRioCheckout.Controllers
                         Request.UserLanguages[0] :  // obtain it from HTTP header AcceptLanguages
                         null;
             // Validate culture name
-            cultureName = CultureHelper.GetImplementedCulture(cultureName); // This is safe
+            cultureName = CultureUtility.GetImplementedCulture(cultureName); // This is safe
 
             // Modify current thread's cultures            
             Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo(cultureName);

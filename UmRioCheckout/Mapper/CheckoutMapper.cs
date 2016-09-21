@@ -7,6 +7,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 using UmRioCheckout.Models;
+using UmRioCheckout.Utilities;
 
 namespace UmRioCheckout.Models
 {
@@ -34,10 +35,12 @@ namespace UmRioCheckout.Models
             expiryDate.Month = partner.CreditCard.ExpiryDate.Substring(0, 2); // MONTH_LENTH = 2
             expiryDate.Year = partner.CreditCard.ExpiryDate.Substring(2 + 3); // MONTH_LENTH+1 + space + /
 
+            var computedBrand = CreditCardUtility.GetBrandByNumber(partner.CreditCard.Number);
+
             // Cria a transação
             transaction.AmountInCents = partner.Plan;
             transaction.CreditCard = new GatewayApiClient.DataContracts.CreditCard();
-            transaction.CreditCard.CreditCardBrand = CreditCardBrandEnum.Visa;
+            transaction.CreditCard.CreditCardBrand = computedBrand;
             transaction.CreditCard.CreditCardNumber = partner.CreditCard.Number;
             transaction.CreditCard.ExpMonth = Convert.ToInt16(expiryDate.Month);
             transaction.CreditCard.ExpYear = Convert.ToInt16(expiryDate.Year);
@@ -46,8 +49,7 @@ namespace UmRioCheckout.Models
             transaction.InstallmentCount = 1;
 
             // Adiciona a transação na requisição.
-            createSaleRequest.CreditCardTransactionCollection = new Collection<CreditCardTransaction>(new CreditCardTransaction[] { transaction
-    });
+            createSaleRequest.CreditCardTransactionCollection = new Collection<CreditCardTransaction>(new CreditCardTransaction[] { transaction });
             createSaleRequest.Order = new Order();
             createSaleRequest.Order.OrderReference = "NumeroDoPedido";
 

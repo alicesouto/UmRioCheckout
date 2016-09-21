@@ -11,7 +11,7 @@ namespace UmRioCheckout.Models
     public class CreditCard
     {
         [Display(Name = "CCNumber", ResourceType = typeof(Resources.Resources))]
-        [StringLength(20, MinimumLength = 20, ErrorMessageResourceType = typeof(Resources.Resources), ErrorMessageResourceName = "CCNumberLength")]
+        [StringLength(20, MinimumLength = 19, ErrorMessageResourceType = typeof(Resources.Resources), ErrorMessageResourceName = "CCNumberLength")]
         [Required(ErrorMessageResourceType = typeof(Resources.Resources), ErrorMessageResourceName = "Required")]
         public string Number { get; set; }
 

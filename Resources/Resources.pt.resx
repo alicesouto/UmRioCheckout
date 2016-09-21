@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="BadRequest" xml:space="preserve">
+    <value>Requisição inválida</value>
+  </data>
   <data name="CCCvvLength" xml:space="preserve">
     <value>código de segurança do cartão de crédito deve conter 3 caracteres</value>
   </data>
@@ -146,6 +149,15 @@
   </data>
   <data name="DonationPlan" xml:space="preserve">
     <value>Escolha seu Plano</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Erro</value>
+  </data>
+  <data name="ExceptionError" xml:space="preserve">
+    <value>Ocorreu um erro inesperado</value>
+  </data>
+  <data name="InvalidMerchantKey" xml:space="preserve">
+    <value>Chave de loja inválida</value>
   </data>
   <data name="Name" xml:space="preserve">
     <value>Nome</value>

@@ -6,6 +6,22 @@
 
 <h2 class="default-header-left">@ViewBag.Title</h2>
 
+<div class="default-header-right">
+    <fieldset>
+        @Resources.ChooseYourLanguage
+        <div class="controls">
+            <label for="en-US">
+                <a href="?culture=en-US"><img src="~/Content/images/en-US.png" /></a>
+            </label>
+        </div>
+        <div class="controls">
+            <label for="pt-BR">
+                <a href="?culture=pt-BR"><img src="~/Content/images/pt-BR.GIF" /></a>
+            </label>
+        </div>
+    </fieldset>
+</div>
+
 @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "donationForm" }))
 {
     @Html.AntiForgeryToken()
@@ -36,6 +52,7 @@
             @Html.LabelFor(model => model.CreditCard.Number, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 <input class="form-control text-box single-line" type="text" name="CreditCard.Number" />
+                @Html.ValidationMessageFor(model => model.CreditCard.Number, "", new { @class = "text-danger" })
             </div>
         </div>
 
@@ -43,6 +60,7 @@
             @Html.LabelFor(model => model.CreditCard.Name, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 <input class="form-control text-box single-line" type="text" name="CreditCard.Name" />
+                @Html.ValidationMessageFor(model => model.CreditCard.Name, "", new { @class = "text-danger" })
             </div>
         </div>
 
@@ -50,14 +68,15 @@
             @Html.LabelFor(model => model.CreditCard.ExpiryDate, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 <input class="form-control text-box single-line" type="text" name="CreditCard.ExpiryDate" />
+                @Html.ValidationMessageFor(model => model.CreditCard.ExpiryDate, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
             @Html.LabelFor(model => model.CreditCard.Cvv, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-
                 <input class="form-control text-box single-line" type="text" name="CreditCard.Cvv" />
+                @Html.ValidationMessageFor(model => model.CreditCard.Cvv, "", new { @class = "text-danger" })
             </div>
         </div>
 

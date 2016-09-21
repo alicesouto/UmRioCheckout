@@ -11,6 +11,7 @@ using System.Net;
 using System.Threading;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Routing;
 using UmRioCheckout.Models;
 using UmRioCheckout.Utilities;
 
@@ -35,18 +36,26 @@ namespace UmRioCheckout.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Name, Email, CreditCard, Plan")]Partner partner)
         {
-            if (ModelState.IsValid)
+            var Plans = new DonationPlans();
+            ViewBag.DonationPlans = Plans.Amount;
+
+            if (!ModelState.IsValid)
             {
-                var Plans = new DonationPlans();
-                ViewBag.DonationPlans = Plans.Amount;
+                Response.StatusCode = (int)HttpStatusCode.BadRequest;
 
-                var partnerManager = new PartnerManager();
-
-                partnerManager.VerifyPartner(partner);
-
-                return RedirectToAction("Thank");
+                return RedirectToAction("Error", new { errorMessage = @Resources.Resources.BadRequest });
             }
-            return View(partner);
+
+            var partnerManager = new PartnerManager();
+
+            var result = partnerManager.VerifyPartner(partner);
+
+            if (result.Valid == false)
+            {
+                return RedirectToAction("Error", new { errorMessage = result.Message });
+            }
+
+            return RedirectToAction("Thank");
         }
 
         public ActionResult Thank()
@@ -54,10 +63,16 @@ namespace UmRioCheckout.Controllers
             return View();
         }
 
+        public ActionResult Error(string errorMessage)
+        {
+            ViewBag.ErrorMessage = errorMessage;
+            return View();
+        }
+
         public void SetCulture(string culture)
         {
             // Validate input
-            string cultureName = CultureHelper.GetImplementedCulture(culture);
+            string cultureName = CultureUtility.GetImplementedCulture(culture);
             // Save culture in a cookie
             HttpCookie cookie = Request.Cookies["_culture"];
             if (cookie != null)
@@ -72,9 +87,8 @@ namespace UmRioCheckout.Controllers
             // Modify current thread's cultures            
             Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo(cultureName);
             Thread.CurrentThread.CurrentUICulture = Thread.CurrentThread.CurrentCulture;
-            
-            Response.Cookies.Add(cookie);
 
+            Response.Cookies.Add(cookie);
         }
     }
 }

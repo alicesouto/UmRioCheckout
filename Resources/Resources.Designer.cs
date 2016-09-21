@@ -61,6 +61,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Invalid request.
+        /// </summary>
+        public static string BadRequest {
+            get {
+                return ResourceManager.GetString("BadRequest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to credit card security code must have 3 characteres.
         /// </summary>
         public static string CCCvvLength {
@@ -147,6 +156,33 @@ namespace Resources {
         public static string DonationPlan {
             get {
                 return ResourceManager.GetString("DonationPlan", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error.
+        /// </summary>
+        public static string Error {
+            get {
+                return ResourceManager.GetString("Error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unexpected Error.
+        /// </summary>
+        public static string ExceptionError {
+            get {
+                return ResourceManager.GetString("ExceptionError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid Merchant Key.
+        /// </summary>
+        public static string InvalidMerchantKey {
+            get {
+                return ResourceManager.GetString("InvalidMerchantKey", resourceCulture);
             }
         }
         
