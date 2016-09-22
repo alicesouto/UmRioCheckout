@@ -79,6 +79,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Expiry date invalid.
+        /// </summary>
+        public static string CCExpiriedYear {
+            get {
+                return ResourceManager.GetString("CCExpiriedYear", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Expiry Date.
         /// </summary>
         public static string CCExpiryDate {
@@ -106,7 +115,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to credit card number must have 16 characteres.
+        ///   Looks up a localized string similar to credit card number must have 10 to 24 characteres.
         /// </summary>
         public static string CCNumberLength {
             get {
@@ -142,7 +151,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Donate!.
+        ///   Looks up a localized string similar to Become a Partner!.
         /// </summary>
         public static string Donate {
             get {

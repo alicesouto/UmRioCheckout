@@ -26,6 +26,13 @@
 {
     @Html.AntiForgeryToken()
 
+    if (ViewBag.ErrorMessage != null)
+    {
+        <div class="error-message">
+            @ViewBag.ErrorMessage
+        </div>
+    }
+
     <div class="form-horizontal">
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -83,7 +90,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Plan, htmlAttributes: new { @class = "control-label col-md-2" })
             @foreach (var Plan in (List<double>)ViewBag.DonationPlans)
-                {
+            {
                 <div class="col-md-10">
                     @Resources.Currency@Plan
                     @Html.RadioButtonFor(model => model.Plan, (int)100 * @Plan, htmlAttributes: new { @class = "control-label col-md-2" })

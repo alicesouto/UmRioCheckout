@@ -20,12 +20,15 @@ namespace UmRioCheckout.Controllers
     public class PartnersController : LanguageController
     {
         // GET: Partners/Create
-        public ActionResult Create(string culture)
+        public ActionResult Create(string culture, string errorMessage)
         {
-            this.SetCulture(culture);
+            this.SetCulture(culture); //SOLVE THIS: ENGLISH WHEN CALLING AGAIN (ERROR MESSAGE)
 
             var Plans = new DonationPlans();
             ViewBag.DonationPlans = Plans.Amount;
+
+            ViewBag.ErrorMessage = errorMessage;
+
             return View();
         }
 
@@ -42,8 +45,7 @@ namespace UmRioCheckout.Controllers
             if (!ModelState.IsValid)
             {
                 Response.StatusCode = (int)HttpStatusCode.BadRequest;
-
-                return RedirectToAction("Error", new { errorMessage = @Resources.Resources.BadRequest });
+                return View("Create");
             }
 
             var partnerManager = new PartnerManager();
@@ -52,7 +54,7 @@ namespace UmRioCheckout.Controllers
 
             if (result.Valid == false)
             {
-                return RedirectToAction("Error", new { errorMessage = result.Message });
+                return RedirectToAction("Create", new { errorMessage = result.Message });
             }
 
             return RedirectToAction("Thank");

@@ -21,10 +21,10 @@ namespace UmRioCheckout.Models
             {
                 result.Message = Resources.Resources.InvalidMerchantKey;
                 result.Valid = false;
-                
+
                 return result;
             }
-            
+
             // Cria o client que enviará a transação.
             var serviceClient = new GatewayServiceClient(merchantKey, configurationUtility.MundiPaggApiUrl);
 
@@ -35,39 +35,32 @@ namespace UmRioCheckout.Models
 
                 if (httpResponse.Response.CreditCardTransactionResultCollection != null)
                 {
-                    result.Message = httpResponse.HttpStatusCode.ToString();
                     result.Valid = true;
+                    return result;
                 }
                 else
                 {
-                    //#region Error Log
-
-                    //var customData = new Dictionary<string, object>();
-
-                    //customData.Add("MerchantKey", merchantKey);
-                    //customData.Add("TransactionStatus", httpResponse.Response.CreditCardTransactionResultCollection.FirstOrDefault().CreditCardTransactionStatus);
-
-                    //RollbarDotNet.Rollbar.Report("VerifyPartner Error!", RollbarDotNet.ErrorLevel.Error, customData);
-
-                    //#endregion
-
-                    result.Message = httpResponse.HttpStatusCode.ToString();
+                    for (var i = 0; i < httpResponse.Response.ErrorReport.ErrorItemCollection.Count; i++)
+                    {
+                        result.Message += httpResponse.Response.ErrorReport.ErrorItemCollection[i].Description + '\n';
+                    }
+      
                     result.Valid = false;
                     return result;
-                } 
+                }
             }
             catch (Exception ex)
             {
-                //#region Exception Log
+                #region Exception Log
 
-                //var customData = new Dictionary<string, object>();
+                var customData = new Dictionary<string, object>();
 
-                //customData.Add("MerchantKey", merchantKey);
-                //customData.Add("Exception", ex);
+                customData.Add("MerchantKey", merchantKey);
+                customData.Add("Exception", ex);
 
-                //RollbarDotNet.Rollbar.Report("VerifyPartner Exception!", RollbarDotNet.ErrorLevel.Critical, customData);
+                RollbarDotNet.Rollbar.Report("VerifyPartner Exception!", RollbarDotNet.ErrorLevel.Critical, customData);
 
-                //#endregion
+                #endregion
 
                 result.Message = @Resources.Resources.ExceptionError;
                 result.Valid = false;

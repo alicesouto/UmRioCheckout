@@ -26,6 +26,14 @@
     padding: 10px;
 }
 
+.error-message {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    padding-left: 10px;
+    clear:both;
+    background-color:lightyellow;
+}
+
 /* Set width on the form input elements since they're 100% wide by default */
 input,
 select,

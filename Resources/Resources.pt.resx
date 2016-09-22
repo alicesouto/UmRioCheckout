@@ -123,6 +123,9 @@
   <data name="CCCvvLength" xml:space="preserve">
     <value>código de segurança do cartão de crédito deve conter 3 caracteres</value>
   </data>
+  <data name="CCExpiriedYear" xml:space="preserve">
+    <value>Data de vencimento do cartão inválida</value>
+  </data>
   <data name="CCExpiryDate" xml:space="preserve">
     <value>Data de Validade</value>
   </data>
@@ -133,7 +136,7 @@
     <value>N° do Cartão de Crédito</value>
   </data>
   <data name="CCNumberLength" xml:space="preserve">
-    <value>número do cartão de crédito deve conter 16 caracteres</value>
+    <value>número do cartão de crédito deve conter entre 10 e 24 caracteres</value>
   </data>
   <data name="CCSecurityCode" xml:space="preserve">
     <value>Código de Segurança</value>
@@ -145,7 +148,7 @@
     <value>R$</value>
   </data>
   <data name="Donate" xml:space="preserve">
-    <value>Torne-se um Doador!</value>
+    <value>Torne-se um Parceiro!</value>
   </data>
   <data name="DonationPlan" xml:space="preserve">
     <value>Escolha seu Plano</value>

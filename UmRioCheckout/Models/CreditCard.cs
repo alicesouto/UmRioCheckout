@@ -11,7 +11,7 @@ namespace UmRioCheckout.Models
     public class CreditCard
     {
         [Display(Name = "CCNumber", ResourceType = typeof(Resources.Resources))]
-        [StringLength(20, MinimumLength = 19, ErrorMessageResourceType = typeof(Resources.Resources), ErrorMessageResourceName = "CCNumberLength")]
+        [StringLength(30, MinimumLength = 10, ErrorMessageResourceType = typeof(Resources.Resources), ErrorMessageResourceName = "CCNumberLength")]
         [Required(ErrorMessageResourceType = typeof(Resources.Resources), ErrorMessageResourceName = "Required")]
         public string Number { get; set; }
 
@@ -20,7 +20,8 @@ namespace UmRioCheckout.Models
         public string ExpiryDate { get; set; }
 
         [Display(Name = "CCSecurityCode", ResourceType = typeof(Resources.Resources))]
-        [StringLength(3, MinimumLength = 3, ErrorMessageResourceType = typeof(Resources.Resources), ErrorMessageResourceName = "CCCvvLength")]
+        [StringLength(4, MinimumLength = 3, ErrorMessageResourceType = typeof(Resources.Resources), ErrorMessageResourceName = "CCCvvLength")]
+        [Required(ErrorMessageResourceType = typeof(Resources.Resources), ErrorMessageResourceName = "Required")]
         public string Cvv { get; set; }
 
         [Display(Name = "CCHolderName", ResourceType = typeof(Resources.Resources))]

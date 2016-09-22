@@ -47,6 +47,13 @@ namespace UmRioCheckout.Models
             transaction.CreditCard.HolderName = partner.Name;
             transaction.CreditCard.SecurityCode = partner.CreditCard.Cvv;
             transaction.InstallmentCount = 1;
+            transaction.Recurrency = new Recurrency()
+            {
+                DateToStartBilling = DateTime.Now,
+                Frequency = FrequencyEnum.Monthly,
+                Interval = 1,
+                Recurrences = 0
+            };
 
             // Adiciona a transação na requisição.
             createSaleRequest.CreditCardTransactionCollection = new Collection<CreditCardTransaction>(new CreditCardTransaction[] { transaction });
