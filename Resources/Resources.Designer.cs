@@ -160,7 +160,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Dontation Plan.
+        ///   Looks up a localized string similar to Monthly Dontation Plan.
         /// </summary>
         public static string DonationPlan {
             get {

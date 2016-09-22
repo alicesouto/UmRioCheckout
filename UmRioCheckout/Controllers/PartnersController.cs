@@ -20,14 +20,12 @@ namespace UmRioCheckout.Controllers
     public class PartnersController : LanguageController
     {
         // GET: Partners/Create
-        public ActionResult Create(string culture, string errorMessage)
+        public ActionResult Create(string culture)
         {
-            this.SetCulture(culture); //SOLVE THIS: ENGLISH WHEN CALLING AGAIN (ERROR MESSAGE)
+            this.SetCulture(culture);
 
             var Plans = new DonationPlans();
             ViewBag.DonationPlans = Plans.Amount;
-
-            ViewBag.ErrorMessage = errorMessage;
 
             return View();
         }
@@ -54,7 +52,8 @@ namespace UmRioCheckout.Controllers
 
             if (result.Valid == false)
             {
-                return RedirectToAction("Create", new { errorMessage = result.Message });
+                ViewBag.ErrorMessage = result.Message;
+                return View("Create");
             }
 
             return RedirectToAction("Thank");
