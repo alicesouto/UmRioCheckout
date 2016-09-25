@@ -42,7 +42,7 @@ namespace UmRioCheckout.Models
                 {
                     for (var i = 0; i < httpResponse.Response.ErrorReport.ErrorItemCollection.Count; i++)
                     {
-                        result.Message += httpResponse.Response.ErrorReport.ErrorItemCollection[i].Description + '\n';
+                        result.Message += httpResponse.Response.ErrorReport.ErrorItemCollection[i].Description + ' ';
                     }
       
                     result.Valid = false;
@@ -53,12 +53,12 @@ namespace UmRioCheckout.Models
             {
                 #region Exception Log
 
-                var customData = new Dictionary<string, object>();
+                //var customData = new Dictionary<string, object>();
 
-                customData.Add("MerchantKey", merchantKey);
-                customData.Add("Exception", ex);
+                //customData.Add("MerchantKey", merchantKey);
+                //customData.Add("Exception", ex);
 
-                RollbarDotNet.Rollbar.Report("VerifyPartner Exception!", RollbarDotNet.ErrorLevel.Critical, customData);
+                //RollbarDotNet.Rollbar.Report("VerifyPartner Exception!", RollbarDotNet.ErrorLevel.Critical, customData);
 
                 #endregion
 
