@@ -92,7 +92,7 @@
             @foreach (var Plan in (List<double>)ViewBag.DonationPlans)
             {
                 <div class="col-md-10">
-                    @Resources.Currency@Plan
+                    @Resources.Currency@Plan/@Resources.Monthly
                     @Html.RadioButtonFor(model => model.Plan, (int)100 * @Plan, htmlAttributes: new { @class = "control-label col-md-2" })
                     @Html.ValidationMessageFor(model => model.Plan, "", new { @class = "text-danger" })
                 </div>
