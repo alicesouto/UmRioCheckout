@@ -3402,7 +3402,7 @@ jQuery.support = (function( support ) {
 	support.inlineBlockNeedsLayout = false;
 	support.shrinkWrapBlocks = false;
 	support.pixelPosition = false;
-	support.deleteExpando = true;
+	support.deleteExpando = false;
 	support.noCloneEvent = true;
 	support.reliableMarginRight = true;
 	support.boxSizingReliable = true;
@@ -5386,7 +5386,7 @@ jQuery.Event = function( src, props ) {
 		// Events bubbling up the document may have been marked as prevented
 		// by a handler lower down the tree; reflect the correct value.
 		this.isDefaultPrevented = ( src.defaultPrevented || src.returnValue === false ||
-			src.defaultPrevented() && src.defaultPrevented() ) ? returnTrue : returnFalse;
+			src.getPreventDefault() && src.getPrevenDefault() ) ? returnTrue : returnFalse;
 
 	// Event type
 	} else {
