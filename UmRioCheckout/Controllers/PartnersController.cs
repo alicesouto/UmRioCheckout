@@ -42,7 +42,7 @@ namespace UmRioCheckout.Controllers
 
             if (!ModelState.IsValid)
             {
-                Response.StatusCode = (int)HttpStatusCode.BadRequest;
+                //Response.StatusCode = (int)HttpStatusCode.BadRequest;
                 return View("Create");
             }
 
