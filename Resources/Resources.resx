@@ -145,7 +145,7 @@
     <value>Choose your language</value>
   </data>
   <data name="Currency" xml:space="preserve">
-    <value>U$</value>
+    <value>R$</value>
   </data>
   <data name="Donate" xml:space="preserve">
     <value>Become a Partner!</value>
@@ -162,8 +162,8 @@
   <data name="InvalidMerchantKey" xml:space="preserve">
     <value>Invalid Merchant Key</value>
   </data>
-  <data name="Monthly" xml:space="preserve">
-    <value>Monthly</value>
+  <data name="Month" xml:space="preserve">
+    <value>Month</value>
   </data>
   <data name="Name" xml:space="preserve">
     <value>Name</value>

@@ -4,108 +4,102 @@
     ViewBag.Title = Resources.Donate;
 }
 
-<h2 class="default-header-left">@ViewBag.Title</h2>
-
-<div class="default-header-right">
-    <fieldset>
-        @Resources.ChooseYourLanguage
-        <div class="controls">
-            <label for="en-US">
-                <a href="?culture=en-US"><img src="~/Content/images/en-US.png" /></a>
-            </label>
-        </div>
-        <div class="controls">
-            <label for="pt-BR">
-                <a href="?culture=pt-BR"><img src="~/Content/images/pt-BR.GIF" /></a>
-            </label>
-        </div>
-    </fieldset>
-</div>
-
-@using (Html.BeginForm(null, null, FormMethod.Post, new { id = "donationForm" }))
-{
-    @Html.AntiForgeryToken()
-
-    if (ViewBag.ErrorMessage != null)
-    {
-        <div class="error-message">
-            @ViewBag.ErrorMessage
-        </div>
-    }
-
-    <div class="form-horizontal">
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="card-wrapper"></div>
-        </div>
-        <div class="form-group">
-            @Html.LabelFor(model => model.CreditCard.Number, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <input class="form-control text-box single-line" type="text" name="CreditCard.Number" />
-                @Html.ValidationMessageFor(model => model.CreditCard.Number, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.CreditCard.Name, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <input class="form-control text-box single-line" type="text" name="CreditCard.Name" />
-                @Html.ValidationMessageFor(model => model.CreditCard.Name, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.CreditCard.ExpiryDate, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <input class="form-control text-box single-line" type="text" name="CreditCard.ExpiryDate" />
-                @Html.ValidationMessageFor(model => model.CreditCard.ExpiryDate, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.CreditCard.Cvv, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <input class="form-control text-box single-line" type="text" name="CreditCard.Cvv" />
-                @Html.ValidationMessageFor(model => model.CreditCard.Cvv, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Plan, htmlAttributes: new { @class = "control-label col-md-2" })
-            @foreach (var Plan in (List<double>)ViewBag.DonationPlans)
-            {
-                <div class="col-md-10">
-                    @Resources.Currency@Plan/@Resources.Monthly
-                    @Html.RadioButtonFor(model => model.Plan, (int)100 * @Plan, htmlAttributes: new { @class = "control-label col-md-2" })
-                    @Html.ValidationMessageFor(model => model.Plan, "", new { @class = "text-danger" })
-                </div>
-            }
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="@Resources.Donate" class="btn btn-default" />
+<div class="columns is-desktop">
+    <div class="column is-half-widescreen">
+        <div class="tile is-offset-1 notification">
+            <div class="background">
+                <hero class="column is-offset-1">
+                    @Resources.ChooseYourLanguage
+                    <div class="control">
+                        <label for="en-US">
+                            <a href="?culture=en-US"><img src="~/Content/images/en-US.png" /></a>
+                        </label>
+                    </div>
+                    <div class="control">
+                        <label for="pt-BR">
+                            <a href="?culture=pt-BR"><img src="~/Content/images/pt-BR.GIF" /></a>
+                        </label>
+                    </div>
+                </hero>
             </div>
         </div>
     </div>
-}
+    <div class="column">
+        <h2 @ViewBag.Title />
+
+        @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "donationForm" }))
+        {
+        @Html.AntiForgeryToken()
+
+            if (ViewBag.ErrorMessage != null)
+            {
+        <div class="error-message" @ViewBag.ErrorMessage />
+            }
+
+        <div class="column is-offset-1">
+            @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "label" })
+            <p class="control">
+                @Html.EditorFor(model => model.Name)
+                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+            </p>
+        </div>
+
+        <label class="label">
+            @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "label" })
+        </label>
+            /*<p class="control"> */
+        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "control" } })
+        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+            /*</p>*/
+
+        <label class="label">
+            @Html.LabelFor(model => model.Plan, htmlAttributes: new { @class = "label" })
+        </label>
+            foreach (var Plan in (List<double>)ViewBag.DonationPlans)
+            {
+        <div class="radio-inline">
+            @Html.RadioButtonFor(model => model.Plan, (int)100 * @Plan, htmlAttributes: new { @class = "control" })
+            @Html.ValidationMessageFor(model => model.Plan, "", new { @class = "text-danger" })
+            @Resources.Currency@Plan/@Resources.Month
+        </div>
+            }
+
+        <div class="column is-success is-offset-one-quarter-widescreen">
+            <div class="card-wrapper"></div>
+        </div>
+
+        @Html.LabelFor(model => model.CreditCard.Number, htmlAttributes: new { @class = "label" })
+        <p class="control">
+            <input class="form-control text-box single-line" type="text" name="CreditCard.Number" />
+            @Html.ValidationMessageFor(model => model.CreditCard.Number, "", new { @class = "text-danger" })
+        </p>
+
+        @Html.LabelFor(model => model.CreditCard.Name, htmlAttributes: new { @class = "label" })
+        <p class="control">
+            <input class="form-control text-box single-line" type="text" name="CreditCard.Name" />
+            @Html.ValidationMessageFor(model => model.CreditCard.Name, "", new { @class = "text-danger" })
+        </p>
+
+        <div class="column is-success">
+            @Html.LabelFor(model => model.CreditCard.ExpiryDate, htmlAttributes: new { @class = "label" })
+            <p class="control">
+                <input class="form-control text-box single-line" type="text" name="CreditCard.ExpiryDate" />
+                @Html.ValidationMessageFor(model => model.CreditCard.ExpiryDate, "", new { @class = "text-danger" })
+            </p>
+        </div>
+
+        <div class="column">
+            @Html.LabelFor(model => model.CreditCard.Cvv, htmlAttributes: new { @class = "label" })
+            <p class="control">
+                <input class="form-control text-box single-line" type="text" name="CreditCard.Cvv" />
+                @Html.ValidationMessageFor(model => model.CreditCard.Cvv, "", new { @class = "text-danger" })
+            </p>
+        </div>
+
+        <input type="submit" value="@Resources.Donate" class="btn btn-default" />
+        }
+    </div>
+</div>
 
 @section Scripts {
     @Scripts.Render("~/Scripts/jquery.card.js")

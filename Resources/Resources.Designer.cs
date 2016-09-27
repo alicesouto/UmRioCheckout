@@ -142,7 +142,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to U$.
+        ///   Looks up a localized string similar to R$.
         /// </summary>
         public static string Currency {
             get {
@@ -196,11 +196,11 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Monthly.
+        ///   Looks up a localized string similar to Month.
         /// </summary>
-        public static string Monthly {
+        public static string Month {
             get {
-                return ResourceManager.GetString("Monthly", resourceCulture);
+                return ResourceManager.GetString("Month", resourceCulture);
             }
         }
         

@@ -31,7 +31,11 @@
     padding-bottom: 40px;
     padding-left: 10px;
     clear:both;
-    background-color:lightyellow;
+    color:red;
+}
+
+.background {
+    background-image: url('images/UmRio_logo.jpg');
 }
 
 /* Set width on the form input elements since they're 100% wide by default */
