@@ -174,4 +174,7 @@
   <data name="Thank" xml:space="preserve">
     <value>Thank you for helping us!</value>
   </data>
+  <data name="ValidEmail" xml:space="preserve">
+    <value>This email is not valid!</value>
+  </data>
 </root>

@@ -1,46 +1,4 @@
-﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
-}
-
-/* Set padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
-}
-
-/* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column 
-*/
-.dl-horizontal dt {
-    white-space: normal;
-}
-
-.default-header-right {
-    float: right;
-    margin-right: 40px;
-}
-
-.default-header-left {
-    float: left;
-    padding: 10px;
-}
-
-.error-message {
-    padding-top: 40px;
-    padding-bottom: 40px;
-    padding-left: 10px;
-    clear:both;
-    color:red;
-}
-
-.background {
+﻿.background {
     background-image: url('images/UmRio_logo.jpg');
-}
-
-/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 280px;
+    background-size: 100% 100%;
 }

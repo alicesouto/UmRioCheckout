@@ -17,6 +17,7 @@ namespace UmRioCheckout.Models
         public string Name { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Resources.Resources), ErrorMessageResourceName = "Required")]
+        [EmailAddress(ErrorMessageResourceType = typeof(Resources.Resources), ErrorMessageResourceName = "ValidEmail")]
         public string Email { get; set; }
 
         [Display(Name = "DonationPlan", ResourceType = typeof(Resources.Resources))]

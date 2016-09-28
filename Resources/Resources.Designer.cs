@@ -230,5 +230,14 @@ namespace Resources {
                 return ResourceManager.GetString("Thank", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This email is not valid!.
+        /// </summary>
+        public static string ValidEmail {
+            get {
+                return ResourceManager.GetString("ValidEmail", resourceCulture);
+            }
+        }
     }
 }
