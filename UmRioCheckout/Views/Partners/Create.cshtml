@@ -5,7 +5,7 @@
 }
 
 <div class="columns">
-    <div class="column is-half background">
+    <div class="column is-one-quarter background-is-logo">
         <div class="message-header">
             @Resources.ChooseYourLanguage
         </div>
@@ -22,29 +22,30 @@
             </div>
         </div>
     </div>
-    <div class="column is-half">
-        <div class="title is-1"> @ViewBag.Title </div>
+    <div class="column background">
+        <div class="box">
+            <div class="title is-1"> @ViewBag.Title </div>
 
-        @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "donationForm" }))
+            @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "donationForm" }))
             {
-            @Html.AntiForgeryToken()
+                @Html.AntiForgeryToken()
 
-            if (ViewBag.ErrorMessage != null)
-            {
-                <div class="message is-danger"> @ViewBag.ErrorMessage </div>
-            }
+                if (ViewBag.ErrorMessage != null)
+                {
+                    <div class="message is-danger"> @ViewBag.ErrorMessage </div>
+                }
 
-            @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "label" })
-            <p class="control">
-                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "input is-large" } })
-                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
-            </p>
+                @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "label" })
+                <p class="control">
+                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "input is-large" } })
+                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                </p>
 
-            @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "label" })
-            <p class="control">
-                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "input is-large" } })
-                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
-            </p>
+                @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "label" })
+                <p class="control">
+                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "input is-large" } })
+                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                </p>
 
                 <div class="column is-grouped-centered">
                     <div class="card-wrapper"></div>
@@ -62,7 +63,7 @@
                     @Html.ValidationMessageFor(model => model.CreditCard.Name, "", new { @class = "text-danger" })
                 </p>
 
-                <div class="columns is-mobile">
+                <div class="columns">
                     <div class="column is-half">
                         @Html.LabelFor(model => model.CreditCard.ExpiryDate, htmlAttributes: new { @class = "label" })
                         <p class="control">
@@ -98,7 +99,8 @@
                         </p>
                     </div>
                 </div>
-        }
+            }
+        </div>
     </div>
 </div>
 

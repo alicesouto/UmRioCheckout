@@ -1,6 +1,11 @@
 ﻿.background {
     background-color: #04376C;
+}
+
+.background-is-logo {
+    background-color: #04376C;
     background-image: url('images/UmRio_logo.jpg');
     background-size: contain;
     background-repeat: no-repeat;
+    background-position:center;
 }
