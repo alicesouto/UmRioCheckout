@@ -1,4 +1,4 @@
 ﻿.background {
     background-image: url('images/UmRio_logo.jpg');
-    background-size: 100% 100%;
+    background-size: contain;
 }

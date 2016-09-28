@@ -6,23 +6,21 @@
 
 <div class="columns is-mobile">
     <div class="column is-half background">
-        <hero class="column">
-            <div class="message-header">
-                @Resources.ChooseYourLanguage
+        <div class="message-header">
+            @Resources.ChooseYourLanguage
+        </div>
+        <div class="tile-ancestor is-mobile">
+            <div class="tile-parent">
+                <label for="en-US" class="image is-24x24">
+                    <a href="?culture=en-US"><img src="~/Content/images/en-US.png" /></a>
+                </label>
             </div>
-            <div class="tile-ancestor is-mobile">
-                <div class="tile-parent">
-                    <label for="en-US">
-                        <a href="?culture=en-US"><img src="~/Content/images/en-US.png" /></a>
-                    </label>
-                </div>
-                <div class="tile-parent">
-                    <label for="pt-BR">
-                        <a href="?culture=pt-BR"><img src="~/Content/images/pt-BR.GIF" /></a>
-                    </label>
-                </div>
+            <div class="tile-parent">
+                <label for="pt-BR" class="image is-24x24">
+                    <a href="?culture=pt-BR"><img src="~/Content/images/pt-BR.GIF" /></a>
+                </label>
             </div>
-        </hero>
+        </div>
     </div>
     <div class="column is-offset-1-mobile">
         <div class="title is-1"> @ViewBag.Title </div>
