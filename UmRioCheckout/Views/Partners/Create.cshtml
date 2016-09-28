@@ -33,7 +33,7 @@
 
             if (ViewBag.ErrorMessage != null)
             {
-                <div class="message"> @ViewBag.ErrorMessage </div>
+                <div class="message is-danger"> @ViewBag.ErrorMessage </div>
             }
 
             @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "label" })
