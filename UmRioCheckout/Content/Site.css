@@ -9,3 +9,10 @@
     background-repeat: no-repeat;
     background-position:center;
 }
+
+.card-container {
+            width: 100%;
+            max-width: 350px;
+            margin: auto auto;
+        }
+
