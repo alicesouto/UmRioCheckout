@@ -11,7 +11,9 @@
 }
 
 .card-container {
-    width: 200px;
+    -ms-transform: scale(); /* IE 9 */
+    -webkit-transform: scale(); /* Chrome, Safari, Opera */
+    transform: scale();
     max-width: 350px;
     margin: auto auto;
 }
