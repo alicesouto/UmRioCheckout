@@ -4,12 +4,12 @@
     ViewBag.Title = Resources.Donate;
 }
 
-<div class="columns is-mobile">
+<div class="columns">
     <div class="column is-half background">
         <div class="message-header">
             @Resources.ChooseYourLanguage
         </div>
-        <div class="tile-ancestor is-mobile">
+        <div class="tile-ancestor">
             <div class="tile-parent">
                 <label for="en-US" class="image is-24x24">
                     <a href="?culture=en-US"><img src="~/Content/images/en-US.png" /></a>
@@ -22,8 +22,8 @@
             </div>
         </div>
     </div>
-    <div class="column is-half-mobile">
-        <div class="title is-mobile is-1"> @ViewBag.Title </div>
+    <div class="column is-half">
+        <div class="title is-1"> @ViewBag.Title </div>
 
         @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "donationForm" }))
         {
@@ -46,7 +46,7 @@
                 @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
             </p>
 
-            <div class="column is-mobile is-centered">
+            <div class="column is-grouped-centered">
                 <div class="card-wrapper"></div>
             </div>
 
@@ -80,7 +80,7 @@
                 </div>
             </div>
 
-            <div class="columns is-mobile">
+            <div class="columns">
                 <div class="column">
                     @Html.LabelFor(model => model.Plan, htmlAttributes: new { @class = "label" })
                     @foreach (var Plan in (List<double>)ViewBag.DonationPlans)
