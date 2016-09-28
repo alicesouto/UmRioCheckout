@@ -6,19 +6,21 @@
 
 <div class="columns">
     <div class="column is-half background">
-        <div class="message-header is-offset-8-mobile">
-            @Resources.ChooseYourLanguage
-        </div>
-        <div class="tile-ancestor">
-            <div class="tile-parent">
-                <label for="en-US" class="image is-24x24">
-                    <a href="?culture=en-US"><img src="~/Content/images/en-US.png" /></a>
-                </label>
+        <div class="column is-offset-12-mobile">
+            <div class="message-header">
+                @Resources.ChooseYourLanguage
             </div>
-            <div class="tile-parent">
-                <label for="pt-BR" class="image is-24x24">
-                    <a href="?culture=pt-BR"><img src="~/Content/images/pt-BR.GIF" /></a>
-                </label>
+            <div class="tile-ancestor">
+                <div class="tile-parent">
+                    <label for="en-US" class="image is-24x24">
+                        <a href="?culture=en-US"><img src="~/Content/images/en-US.png" /></a>
+                    </label>
+                </div>
+                <div class="tile-parent">
+                    <label for="pt-BR" class="image is-24x24">
+                        <a href="?culture=pt-BR"><img src="~/Content/images/pt-BR.GIF" /></a>
+                    </label>
+                </div>
             </div>
         </div>
     </div>
@@ -26,7 +28,7 @@
         <div class="title is-1"> @ViewBag.Title </div>
 
         @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "donationForm" }))
-        {
+            {
             @Html.AntiForgeryToken()
 
             if (ViewBag.ErrorMessage != null)
@@ -40,64 +42,64 @@
                 @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
             </p>
 
-            @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "label" })
-            <p class="control">
-                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "input is-large" } })
-                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
-            </p>
+                @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "label" })
+                <p class="control">
+                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "input is-large" } })
+                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                </p>
 
-            <div class="column is-grouped-centered">
-                <div class="card-wrapper"></div>
-            </div>
-
-            @Html.LabelFor(model => model.CreditCard.Number, htmlAttributes: new { @class = "label" })
-            <p class="control">
-                <input class="input is-large" type="text" name="CreditCard.Number" />
-                @Html.ValidationMessageFor(model => model.CreditCard.Number, "", new { @class = "text-danger" })
-            </p>
-
-            @Html.LabelFor(model => model.CreditCard.Name, htmlAttributes: new { @class = "label" })
-            <p class="control">
-                <input class="input is-large" type="text" name="CreditCard.Name" />
-                @Html.ValidationMessageFor(model => model.CreditCard.Name, "", new { @class = "text-danger" })
-            </p>
-
-            <div class="columns is-mobile">
-                <div class="column is-half">
-                    @Html.LabelFor(model => model.CreditCard.ExpiryDate, htmlAttributes: new { @class = "label" })
-                    <p class="control">
-                        <input class="input is-large" type="text" name="CreditCard.ExpiryDate" />
-                        @Html.ValidationMessageFor(model => model.CreditCard.ExpiryDate, "", new { @class = "text-danger" })
-                    </p>
+                <div class="column is-grouped-centered">
+                    <div class="card-wrapper"></div>
                 </div>
 
-                <div class="column is-half">
-                    @Html.LabelFor(model => model.CreditCard.Cvv, htmlAttributes: new { @class = "label" })
-                    <p class="control">
-                        <input class="input is-large" type="text" name="CreditCard.Cvv" />
-                        @Html.ValidationMessageFor(model => model.CreditCard.Cvv, "", new { @class = "text-danger" })
-                    </p>
-                </div>
-            </div>
+                @Html.LabelFor(model => model.CreditCard.Number, htmlAttributes: new { @class = "label" })
+                <p class="control">
+                    <input class="input is-large" type="text" name="CreditCard.Number" />
+                    @Html.ValidationMessageFor(model => model.CreditCard.Number, "", new { @class = "text-danger" })
+                </p>
 
-            <div class="columns">
-                <div class="column">
-                    @Html.LabelFor(model => model.Plan, htmlAttributes: new { @class = "label" })
-                    @foreach (var Plan in (List<double>)ViewBag.DonationPlans)
-                    {
-                        <div class="radio-inline">
-                            @Html.RadioButtonFor(model => model.Plan, (int)100 * @Plan, htmlAttributes: new { @class = "control" })
-                            @Html.ValidationMessageFor(model => model.Plan, "", new { @class = "text-danger" })
-                            @Resources.Currency@Plan/@Resources.Month
-                        </div>
-                    }
+                @Html.LabelFor(model => model.CreditCard.Name, htmlAttributes: new { @class = "label" })
+                <p class="control">
+                    <input class="input is-large" type="text" name="CreditCard.Name" />
+                    @Html.ValidationMessageFor(model => model.CreditCard.Name, "", new { @class = "text-danger" })
+                </p>
+
+                <div class="columns is-mobile">
+                    <div class="column is-half">
+                        @Html.LabelFor(model => model.CreditCard.ExpiryDate, htmlAttributes: new { @class = "label" })
+                        <p class="control">
+                            <input class="input is-large" type="text" name="CreditCard.ExpiryDate" />
+                            @Html.ValidationMessageFor(model => model.CreditCard.ExpiryDate, "", new { @class = "text-danger" })
+                        </p>
+                    </div>
+
+                    <div class="column is-half">
+                        @Html.LabelFor(model => model.CreditCard.Cvv, htmlAttributes: new { @class = "label" })
+                        <p class="control">
+                            <input class="input is-large" type="text" name="CreditCard.Cvv" />
+                            @Html.ValidationMessageFor(model => model.CreditCard.Cvv, "", new { @class = "text-danger" })
+                        </p>
+                    </div>
                 </div>
-                <div class="column">
-                    <p class="control">
-                        <button class="button is-large is-primary is-mobile">@Resources.Donate</button>
-                    </p>
+
+                <div class="columns">
+                    <div class="column">
+                        @Html.LabelFor(model => model.Plan, htmlAttributes: new { @class = "label" })
+                        @foreach (var Plan in (List<double>)ViewBag.DonationPlans)
+                        {
+                            <div class="radio-inline">
+                                @Html.RadioButtonFor(model => model.Plan, (int)100 * @Plan, htmlAttributes: new { @class = "control" })
+                                @Html.ValidationMessageFor(model => model.Plan, "", new { @class = "text-danger" })
+                                @Resources.Currency@Plan/@Resources.Month
+                            </div>
+                        }
+                    </div>
+                    <div class="column">
+                        <p class="control">
+                            <button class="button is-large is-primary is-mobile">@Resources.Donate</button>
+                        </p>
+                    </div>
                 </div>
-            </div>
         }
     </div>
 </div>
