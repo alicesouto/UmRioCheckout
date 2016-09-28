@@ -5,24 +5,22 @@
 }
 
 <div class="columns">
-    <div class="column is-half background">
-        <hero class="column is-offset-12-mobile">
-            <div class="message-header">
-                @Resources.ChooseYourLanguage
+    <div class="column is-half background is-offset-12-mobile">
+        <div class="message-header">
+            @Resources.ChooseYourLanguage
+        </div>
+        <div class="tile-ancestor">
+            <div class="tile-parent">
+                <label for="en-US" class="image is-24x24">
+                    <a href="?culture=en-US"><img src="~/Content/images/en-US.png" /></a>
+                </label>
             </div>
-            <div class="tile-ancestor">
-                <div class="tile-parent">
-                    <label for="en-US" class="image is-24x24">
-                        <a href="?culture=en-US"><img src="~/Content/images/en-US.png" /></a>
-                    </label>
-                </div>
-                <div class="tile-parent">
-                    <label for="pt-BR" class="image is-24x24">
-                        <a href="?culture=pt-BR"><img src="~/Content/images/pt-BR.GIF" /></a>
-                    </label>
-                </div>
+            <div class="tile-parent">
+                <label for="pt-BR" class="image is-24x24">
+                    <a href="?culture=pt-BR"><img src="~/Content/images/pt-BR.GIF" /></a>
+                </label>
             </div>
-        </hero>
+        </div>
     </div>
     <div class="column is-half">
         <div class="title is-1"> @ViewBag.Title </div>
@@ -42,11 +40,11 @@
                 @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
             </p>
 
-                @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "label" })
-                <p class="control">
-                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "input is-large" } })
-                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
-                </p>
+            @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "label" })
+            <p class="control">
+                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "input is-large" } })
+                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+            </p>
 
                 <div class="column is-grouped-centered">
                     <div class="card-wrapper"></div>
@@ -83,7 +81,7 @@
                 </div>
 
                 <div class="columns">
-                    <div class="column">
+                    <div class="column is-half">
                         @Html.LabelFor(model => model.Plan, htmlAttributes: new { @class = "label" })
                         @foreach (var Plan in (List<double>)ViewBag.DonationPlans)
                         {
@@ -94,7 +92,7 @@
                             </div>
                         }
                     </div>
-                    <div class="column">
+                    <div class="column is-half">
                         <p class="control">
                             <button class="button is-large is-primary">@Resources.Donate</button>
                         </p>
