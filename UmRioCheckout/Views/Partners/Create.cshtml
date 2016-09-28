@@ -24,8 +24,8 @@
             </div>
         </hero>
     </div>
-    <div class="column is-offset-1">
-        <div class="title"> @ViewBag.Title </div>
+    <div class="column is-offset-1-mobile">
+        <div class="title is-1"> @ViewBag.Title </div>
 
         @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "donationForm" }))
         {
@@ -38,25 +38,15 @@
 
             @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "label" })
             <p class="control">
-                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "input" } })
+                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "input is-large" } })
                 @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
             </p>
 
             @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "label" })
             <p class="control">
-                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "input" } })
+                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "input is-large" } })
                 @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
             </p>
-
-            @Html.LabelFor(model => model.Plan, htmlAttributes: new { @class = "label" })
-            foreach (var Plan in (List<double>)ViewBag.DonationPlans)
-            {
-                <div class="radio-inline">
-                    @Html.RadioButtonFor(model => model.Plan, (int)100 * @Plan, htmlAttributes: new { @class = "control" })
-                    @Html.ValidationMessageFor(model => model.Plan, "", new { @class = "text-danger" })
-                    @Resources.Currency@Plan/@Resources.Month
-                </div>
-            }
 
             <div class="column">
                 <div class="card-wrapper"></div>
@@ -64,13 +54,13 @@
 
             @Html.LabelFor(model => model.CreditCard.Number, htmlAttributes: new { @class = "label" })
             <p class="control">
-                <input class="input" type="text" name="CreditCard.Number" />
+                <input class="input is-large" type="text" name="CreditCard.Number" />
                 @Html.ValidationMessageFor(model => model.CreditCard.Number, "", new { @class = "text-danger" })
             </p>
 
             @Html.LabelFor(model => model.CreditCard.Name, htmlAttributes: new { @class = "label" })
             <p class="control">
-                <input class="input" type="text" name="CreditCard.Name" />
+                <input class="input is-large" type="text" name="CreditCard.Name" />
                 @Html.ValidationMessageFor(model => model.CreditCard.Name, "", new { @class = "text-danger" })
             </p>
 
@@ -78,7 +68,7 @@
                 <div class="column is-half">
                     @Html.LabelFor(model => model.CreditCard.ExpiryDate, htmlAttributes: new { @class = "label" })
                     <p class="control">
-                        <input class="input" type="text" name="CreditCard.ExpiryDate" />
+                        <input class="input is-large" type="text" name="CreditCard.ExpiryDate" />
                         @Html.ValidationMessageFor(model => model.CreditCard.ExpiryDate, "", new { @class = "text-danger" })
                     </p>
                 </div>
@@ -86,16 +76,29 @@
                 <div class="column is-half">
                     @Html.LabelFor(model => model.CreditCard.Cvv, htmlAttributes: new { @class = "label" })
                     <p class="control">
-                        <input class="input" type="text" name="CreditCard.Cvv" />
+                        <input class="input is-large" type="text" name="CreditCard.Cvv" />
                         @Html.ValidationMessageFor(model => model.CreditCard.Cvv, "", new { @class = "text-danger" })
                     </p>
                 </div>
             </div>
 
-            <div class="column is-offset-8">
-                <p class="control">
-                    <button class="button fa is-large is-primary">@Resources.Donate</button>
-                </p>
+            <div class="columns is-mobile">
+                <div class="column">
+                    @Html.LabelFor(model => model.Plan, htmlAttributes: new { @class = "label" })
+                    @foreach (var Plan in (List<double>)ViewBag.DonationPlans)
+                    {
+                        <div class="radio-inline">
+                            @Html.RadioButtonFor(model => model.Plan, (int)100 * @Plan, htmlAttributes: new { @class = "control" })
+                            @Html.ValidationMessageFor(model => model.Plan, "", new { @class = "text-danger" })
+                            @Resources.Currency@Plan/@Resources.Month
+                        </div>
+                    }
+                </div>
+                <div class="column">
+                    <p class="control">
+                        <button class="button is-large is-primary">@Resources.Donate</button>
+                    </p>
+                </div>
             </div>
         }
     </div>
