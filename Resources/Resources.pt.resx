@@ -148,7 +148,7 @@
     <value>R$</value>
   </data>
   <data name="Donate" xml:space="preserve">
-    <value>Torne-se um Parceiro!</value>
+    <value>Torne-se Um Parceiro!</value>
   </data>
   <data name="DonationPlan" xml:space="preserve">
     <value>Escolha seu Plano</value>
@@ -163,7 +163,7 @@
     <value>Chave de loja inválida</value>
   </data>
   <data name="Month" xml:space="preserve">
-    <value>Mês</value>
+    <value>mês</value>
   </data>
   <data name="Name" xml:space="preserve">
     <value>Nome</value>

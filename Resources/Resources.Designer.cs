@@ -97,7 +97,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Holder Name.
+        ///   Looks up a localized string similar to Card&apos;s Holder Name.
         /// </summary>
         public static string CCHolderName {
             get {
@@ -124,7 +124,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Security Code.
+        ///   Looks up a localized string similar to CCV.
         /// </summary>
         public static string CCSecurityCode {
             get {
@@ -151,7 +151,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Become a Partner!.
+        ///   Looks up a localized string similar to Partner Up!.
         /// </summary>
         public static string Donate {
             get {
@@ -196,7 +196,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Month.
+        ///   Looks up a localized string similar to month.
         /// </summary>
         public static string Month {
             get {
