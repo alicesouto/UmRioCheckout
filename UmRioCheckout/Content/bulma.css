@@ -5526,11 +5526,11 @@ a.panel-block:hover {
 }
 
 .columns:last-child {
-  margin-bottom: -10px;
+  margin-bottom: 0px;
 }
 
 .columns:not(:last-child) {
-  margin-bottom: 10px;
+  margin-bottom: 0px;
 }
 
 .columns.is-centered {
