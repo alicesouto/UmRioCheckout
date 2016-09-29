@@ -5,7 +5,7 @@
 }
 
 <div class="columns background">
-    <div class="column is-one-quarter">
+    <div class="column is-flex-desktop-only is-one-quarter">
         <div class="message-header">
             @Resources.ChooseYourLanguage
         </div>
@@ -50,7 +50,7 @@
                 @Html.LabelFor(model => model.Plan, htmlAttributes: new { @class = "label" })
                 foreach (var Plan in (List<double>)ViewBag.DonationPlans)
                 {
-                    <div class="radio is-inline-flex-mobile">
+                    <div class="radio is-inline-block-mobile">
                         @Html.RadioButtonFor(model => model.Plan, (int)100 * @Plan, htmlAttributes: new { @class = "control" })
                         @Html.ValidationMessageFor(model => model.Plan, "", new { @class = "text-danger" })
                         @Resources.Currency @Plan /@Resources.Month
@@ -58,7 +58,7 @@
                 }
 
                 <div class="card-wrapper"></div>
-                
+
                 @Html.LabelFor(model => model.CreditCard.Number, htmlAttributes: new { @class = "label" })
                 <p class="control">
                     <input class="input" type="text" name="CreditCard.Number" />
@@ -97,6 +97,7 @@
             }
         </div>
     </div>
+    <div class="column is-flex-desktop-only"></div>
 </div>
 
 @section Scripts {
