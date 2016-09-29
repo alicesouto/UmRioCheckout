@@ -27,7 +27,7 @@
         </div>
     </div>
     <div class="column is-half-desktop is-offset-1-mobile">
-        <figure class="image is-64x64 centered">
+        <figure class="image is-128x128 centered">
             <img src="~/Content/images/UmRio_logo.jpg" />
         </figure>
         <div class="box">
@@ -57,11 +57,11 @@
                 @Html.LabelFor(model => model.Plan, htmlAttributes: new { @class = "label" })
                 foreach (var Plan in (List<double>)ViewBag.DonationPlans)
                 {
-                    <div class="radio is-inline-block-mobile">
+                    <label class="radio is-inline-block-mobile">
                         @Html.RadioButtonFor(model => model.Plan, (int)100 * @Plan, htmlAttributes: new { @class = "control" })
                         @Html.ValidationMessageFor(model => model.Plan, "", new { @class = "text-danger" })
                         @Resources.Currency @Plan /@Resources.Month
-                    </div>
+                    </label>
                 }
 
                 <div class="card-wrapper"></div>

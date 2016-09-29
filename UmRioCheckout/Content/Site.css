@@ -15,11 +15,15 @@
 .card-wrapper {
    transform: scale(0.7);
    transform-origin: center 55px;
-   margin-bottom:-5px;
+   margin-bottom:-15px;
 }
 
 .centered {
-    margin-bottom: -2%;
-    margin-top:2%;
-    left: 50%;
+    margin: 0 auto;
+}
+
+@media only screen and (max-width: 415px) {
+    .card-wrapper{
+        transform-origin: left center;
+    }
 }

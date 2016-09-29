@@ -6749,6 +6749,7 @@ a.panel-block:hover {
 .footer {
   background-color: whitesmoke;
   padding: 40px 20px 80px;
+  color:white;
 }
 
 .footer a, .footer a:visited {
