@@ -5,24 +5,31 @@
 }
 
 <div class="columns background">
-    <div class="column is-one-quarter-desktop">
-        <div class="message-header">
-            @Resources.ChooseYourLanguage
-        </div>
-        <div class="tile-ancestor">
-            <div class="tile-parent">
-                <label for="en-US" class="image is-24x24">
-                    <a href="?culture=en-US"><img src="~/Content/images/en-US.png" /></a>
-                </label>
-            </div>
-            <div class="tile-parent">
-                <label for="pt-BR" class="image is-24x24">
-                    <a href="?culture=pt-BR"><img src="~/Content/images/pt-BR.GIF" /></a>
-                </label>
+    <div class="column is-one-quarter">
+        <div class="tile is-ancestor">
+            <div class="tile is-parent is-vertical">
+                <div class="tile is-child">
+                    <div class="message-header">
+                        @Resources.ChooseYourLanguage
+                    </div>
+                </div>
+                <div class="tile is-child">
+                    <label for="en-US" class="image is-24x24">
+                        <a href="?culture=en-US"><img src="~/Content/images/en-US.png" /></a>
+                    </label>
+                </div>
+                <div class="tile is-child">
+                    <label for="pt-BR" class="image is-24x24">
+                        <a href="?culture=pt-BR"><img src="~/Content/images/pt-BR.GIF" /></a>
+                    </label>
+                </div>
             </div>
         </div>
     </div>
-    <div class="column is-half-desktop is-offset-1-mobile background-is-logo">
+    <div class="column is-half-desktop is-offset-1-mobile">
+        <figure class="image is-64x64 centered">
+            <img src="~/Content/images/UmRio_logo.jpg" />
+        </figure>
         <div class="box">
             <div class="title is-4"> @ViewBag.Title </div>
 
@@ -89,15 +96,16 @@
                     </div>
                 </div>
 
-                <div class="column is-offset-7">
-                    <p class="control">
-                        <button class="button is-medium is-primary"> @Resources.Donate</button>
-                    </p>
-                </div>
+                    <div class="column is-offset-7">
+                        <p class="control">
+                            <button class="button is-medium is-primary"> @Resources.Donate</button>
+                        </p>
+                    </div>
             }
         </div>
     </div>
 </div>
+
 
 @section Scripts {
     @Scripts.Render("~/Scripts/jquery.card.js")

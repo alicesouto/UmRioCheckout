@@ -613,7 +613,7 @@ table th {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /*box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);*/
   display: block;
   padding: 30px;
-  margin: 20%;
+  margin: 10%;
 }
 
 .box:not(:last-child) {
@@ -4915,7 +4915,7 @@ a.panel-block:hover {
     width: 8.33333%;
   }
   .column.is-offset-1-mobile {
-    margin-left: 8.33333%;
+    margin-left: 2%; /*8.333333%*/
   }
   .column.is-2-mobile {
     -webkit-box-flex: 0;
@@ -5666,7 +5666,7 @@ a.panel-block:hover {
 }
 
 .tile.is-vertical > .tile.is-child:not(:last-child) {
-  margin-bottom: 20px !important;
+  margin-bottom: 0px !important; /*20px*/
 }
 
 @media screen and (min-width: 769px) {

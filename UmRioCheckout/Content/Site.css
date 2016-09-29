@@ -8,11 +8,18 @@
     background-size: 64px;
     background-repeat: no-repeat;
     background-position: top center;
-    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-top:1%;
 }
 
 .card-wrapper {
    transform: scale(0.6);
    transform-origin: center 55px;
-   margin-bottom: -10%;
+   margin-bottom:-5px;
+}
+
+.centered {
+    margin-bottom: -2%;
+    margin-top:2%;
+    left: 50%;
 }
