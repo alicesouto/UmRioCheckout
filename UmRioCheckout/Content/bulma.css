@@ -2692,7 +2692,7 @@ a.box:active {
     max-width: 960px;
   }
   .container.is-fluid {
-    margin: 0 20px;
+    margin: 0 0;
     max-width: none;
   }
 }
