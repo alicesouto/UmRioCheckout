@@ -37,13 +37,13 @@
 
                 @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "label" })
                 <p class="control">
-                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "input is-small" } })
+                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "input" } })
                     @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
                 </p>
 
                 @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "label" })
                 <p class="control">
-                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "input is-small" } })
+                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "input" } })
                     @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
                 </p>
 
@@ -57,19 +57,17 @@
                     </div>
                 }
 
-                <div class="card-container">
-                    <div class="card-wrapper"></div>
-                </div>
-
+                <div class="card-wrapper"></div>
+                
                 @Html.LabelFor(model => model.CreditCard.Number, htmlAttributes: new { @class = "label" })
                 <p class="control">
-                    <input class="input is-small" type="text" name="CreditCard.Number" />
+                    <input class="input" type="text" name="CreditCard.Number" />
                     @Html.ValidationMessageFor(model => model.CreditCard.Number, "", new { @class = "text-danger" })
                 </p>
 
                 @Html.LabelFor(model => model.CreditCard.Name, htmlAttributes: new { @class = "label" })
                 <p class="control">
-                    <input class="input is-small" type="text" name="CreditCard.Name" />
+                    <input class="input" type="text" name="CreditCard.Name" />
                     @Html.ValidationMessageFor(model => model.CreditCard.Name, "", new { @class = "text-danger" })
                 </p>
 
@@ -77,7 +75,7 @@
                     <div class="column is-half">
                         @Html.LabelFor(model => model.CreditCard.ExpiryDate, htmlAttributes: new { @class = "label" })
                         <p class="control">
-                            <input class="input is-small" type="text" name="CreditCard.ExpiryDate" />
+                            <input class="input" type="text" name="CreditCard.ExpiryDate" />
                             @Html.ValidationMessageFor(model => model.CreditCard.ExpiryDate, "", new { @class = "text-danger" })
                         </p>
                     </div>
@@ -85,13 +83,13 @@
                     <div class="column is-half">
                         @Html.LabelFor(model => model.CreditCard.Cvv, htmlAttributes: new { @class = "label" })
                         <p class="control">
-                            <input class="input is-small" type="text" name="CreditCard.Cvv" />
+                            <input class="input" type="text" name="CreditCard.Cvv" />
                             @Html.ValidationMessageFor(model => model.CreditCard.Cvv, "", new { @class = "text-danger" })
                         </p>
                     </div>
                 </div>
 
-                <div class="column is-offset-8">
+                <div class="column is-offset-7">
                     <p class="control">
                         <button class="button is-medium is-primary"> @Resources.Donate</button>
                     </p>

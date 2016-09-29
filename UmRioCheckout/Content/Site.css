@@ -8,13 +8,10 @@
     background-size: 128px;
     background-repeat: no-repeat;
     background-position: top center;
-    margin-top: 10px;
+    margin-top: 1%;
 }
 
-.card-container {
-    -ms-transform: scale(); /* IE 9 */
-    -webkit-transform: scale(); /* Chrome, Safari, Opera */
-    transform: scale();
-    max-width: 350px;
-    margin: auto auto;
+.card-wrapper {
+   transform: scale(0.7);
+   transform-origin: center 55px;
 }
