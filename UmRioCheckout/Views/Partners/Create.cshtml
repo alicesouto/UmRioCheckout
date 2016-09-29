@@ -50,7 +50,7 @@
                 @Html.LabelFor(model => model.Plan, htmlAttributes: new { @class = "label" })
                 foreach (var Plan in (List<double>)ViewBag.DonationPlans)
                 {
-                    <div class="radio is-inline-mobile">
+                    <div class="radio is-inline-flex-mobile">
                         @Html.RadioButtonFor(model => model.Plan, (int)100 * @Plan, htmlAttributes: new { @class = "control" })
                         @Html.ValidationMessageFor(model => model.Plan, "", new { @class = "text-danger" })
                         @Resources.Currency @Plan /@Resources.Month
