@@ -5652,6 +5652,7 @@ a.panel-block:hover {
 
 .tile.is-child {
   margin: 0 !important;
+  left: 5px;
 }
 
 .tile.is-parent {
