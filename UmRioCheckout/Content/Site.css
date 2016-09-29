@@ -5,9 +5,10 @@
 .background-is-logo {
     background-color: #04376C;
     background-image: url('images/UmRio_logo.jpg');
-    background-size: contain;
+    background-size: 128px;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: top center;
+    margin-top: 2%;
 }
 
 .card-container {
