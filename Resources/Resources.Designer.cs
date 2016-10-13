@@ -124,7 +124,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to CCV.
+        ///   Looks up a localized string similar to CVV.
         /// </summary>
         public static string CCSecurityCode {
             get {

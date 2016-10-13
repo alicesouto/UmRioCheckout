@@ -139,7 +139,7 @@
     <value>credit card number must have 10 to 24 characteres</value>
   </data>
   <data name="CCSecurityCode" xml:space="preserve">
-    <value>CCV</value>
+    <value>CVV</value>
   </data>
   <data name="ChooseYourLanguage" xml:space="preserve">
     <value>Choose your language</value>
