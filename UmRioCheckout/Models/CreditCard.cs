@@ -25,6 +25,7 @@ namespace UmRioCheckout.Models
         public string Cvv { get; set; }
 
         [Display(Name = "CCHolderName", ResourceType = typeof(Resources.Resources))]
+        [Required(ErrorMessageResourceType = typeof(Resources.Resources), ErrorMessageResourceName = "Required")]
         public string Name { get; set; }
     }
 }

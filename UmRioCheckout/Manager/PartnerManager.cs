@@ -1,8 +1,5 @@
 ﻿using GatewayApiClient;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using UmRioCheckout.Utilities;
 
 namespace UmRioCheckout.Models
@@ -66,7 +63,7 @@ namespace UmRioCheckout.Models
                 result.Valid = false;
             }
 
-            return result;
+            return result;       
         }
     }
 }
