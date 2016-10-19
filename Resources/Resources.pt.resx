@@ -162,6 +162,9 @@
   <data name="InvalidMerchantKey" xml:space="preserve">
     <value>Chave de loja inválida</value>
   </data>
+  <data name="InvalidTransaction" xml:space="preserve">
+    <value>Transação inválida</value>
+  </data>
   <data name="Month" xml:space="preserve">
     <value>mês</value>
   </data>

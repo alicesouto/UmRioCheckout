@@ -196,6 +196,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Invalid transaction.
+        /// </summary>
+        public static string InvalidTransaction {
+            get {
+                return ResourceManager.GetString("InvalidTransaction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to month.
         /// </summary>
         public static string Month {

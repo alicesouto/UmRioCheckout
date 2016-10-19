@@ -32,7 +32,13 @@ namespace UmRioCheckout.Models
 
                 if (httpResponse.Response.CreditCardTransactionResultCollection != null)
                 {
-                    result.Valid = true;
+                    if (httpResponse.Response.CreditCardTransactionResultCollection[0].Success) {
+                        result.Valid = true;
+                    }
+                    else {
+                        result.Message = @Resources.Resources.InvalidTransaction;
+                        result.Valid = false;
+                    }
                     return result;
                 }
                 else

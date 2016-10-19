@@ -159,6 +159,9 @@
   <data name="ExceptionError" xml:space="preserve">
     <value>Unexpected Error</value>
   </data>
+  <data name="InvalidTransaction" xml:space="preserve">
+    <value>Invalid transaction</value>
+  </data>
   <data name="InvalidMerchantKey" xml:space="preserve">
     <value>Invalid Merchant Key</value>
   </data>
