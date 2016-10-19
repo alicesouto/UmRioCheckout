@@ -58,7 +58,6 @@ namespace UmRioCheckout.Models
             // Adiciona a transação na requisição.
             createSaleRequest.CreditCardTransactionCollection = new Collection<CreditCardTransaction>(new CreditCardTransaction[] { transaction });
             createSaleRequest.Order = new Order();
-            createSaleRequest.Order.OrderReference = "NumeroDoPedido";
 
             return createSaleRequest;
         }
