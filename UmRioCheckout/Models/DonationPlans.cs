@@ -12,7 +12,7 @@ namespace UmRioCheckout.Models
         public DonationPlans()
         {
             Amount = new List<double>();
-            Amount.Add(10.00);
+            Amount.Add(15.00);
             Amount.Add(30.00);
         }
         
