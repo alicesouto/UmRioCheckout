@@ -163,7 +163,7 @@
     <value>Chave de loja inválida</value>
   </data>
   <data name="InvalidTransaction" xml:space="preserve">
-    <value>Transação inválida</value>
+    <value>Opa! Transação inválida... Verifique os dados e tente novamente :)</value>
   </data>
   <data name="Month" xml:space="preserve">
     <value>mês</value>

@@ -160,7 +160,7 @@
     <value>Unexpected Error</value>
   </data>
   <data name="InvalidTransaction" xml:space="preserve">
-    <value>Invalid transaction</value>
+    <value>Oops! Invalid transaction... Check your details and try again :)</value>
   </data>
   <data name="InvalidMerchantKey" xml:space="preserve">
     <value>Invalid Merchant Key</value>

@@ -196,7 +196,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Invalid transaction.
+        ///   Looks up a localized string similar to Oops! Invalid transaction... Check your details and try again :).
         /// </summary>
         public static string InvalidTransaction {
             get {
