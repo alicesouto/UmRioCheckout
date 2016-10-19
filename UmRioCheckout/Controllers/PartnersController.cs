@@ -1,17 +1,7 @@
-﻿using GatewayApiClient;
-using GatewayApiClient.DataContracts;
-using GatewayApiClient.DataContracts.EnumTypes;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Data;
-using System.Data.Entity;
-using System.Linq;
-using System.Net;
+﻿using System;
 using System.Threading;
 using System.Web;
 using System.Web.Mvc;
-using System.Web.Routing;
 using UmRioCheckout.Models;
 using UmRioCheckout.Utilities;
 
