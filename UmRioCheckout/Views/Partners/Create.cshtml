@@ -1,4 +1,4 @@
-﻿@model UmRioCheckout.Models.Partner
+﻿﻿@model UmRioCheckout.Models.Partner
 
 @{
     ViewBag.Title = Resources.Donate;
@@ -14,8 +14,8 @@
                     </div>
                 </div>
                 <div class="tile is-child">
-                    <label for="en-US" class="image is-24x24">
-                        <a href="?culture=en-US"><img src="~/Content/images/en-UK.png" /></a>
+                    <label for="en-UK" class="image is-24x24">
+                        <a href="?culture=en-UK"><img src="~/Content/images/en-UK.png" /></a>
                     </label>
                 </div>
                 <div class="tile is-child">
@@ -60,7 +60,7 @@
                     <label class="radio is-inline-block-mobile">
                         @Html.RadioButtonFor(model => model.Plan, (int)100 * @Plan, htmlAttributes: new { @class = "control" })
                         @Html.ValidationMessageFor(model => model.Plan, "", new { @class = "text-danger" })
-                        @Resources.Currency @Plan /@Resources.Month
+                        @Resources.Currency @Plan / @Resources.Month
                     </label>
                 }
 
