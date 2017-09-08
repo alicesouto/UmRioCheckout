@@ -16,7 +16,7 @@ namespace UmRioCheckout.Controllers
 
             var Plans = new DonationPlans();
             ViewBag.DonationPlans = Plans.Amount;
-            ViewBag.Culture = Thread.CurrentThread.CurrentCulture;
+            ViewBag.Culture = Thread.CurrentThread.CurrentCulture.ToString();
 
             return View();
         }
@@ -30,7 +30,7 @@ namespace UmRioCheckout.Controllers
         {
             var Plans = new DonationPlans();
             ViewBag.DonationPlans = Plans.Amount;
-            ViewBag.Culture = Thread.CurrentThread.CurrentCulture;
+            ViewBag.Culture = Thread.CurrentThread.CurrentCulture.ToString();
 
             if (!ModelState.IsValid)
             {
