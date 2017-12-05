@@ -79,6 +79,12 @@
                     </label>
 
                     <label class="radio is-inline-block-mobile">
+                        @Html.RadioButtonFor(model => model.Plan, (int)3200, htmlAttributes: new { @class = "control" })
+                        @Html.ValidationMessageFor(model => model.Plan, "", new { @class = "text-danger" })
+                        @Resources.Currency 8 / @Resources.Month
+                    </label>
+
+                    <label class="radio is-inline-block-mobile">
                         @Html.RadioButtonFor(model => model.Plan, (int)4000, htmlAttributes: new { @class = "control" })
                         @Html.ValidationMessageFor(model => model.Plan, "", new { @class = "text-danger" })
                         @Resources.Currency 10 / @Resources.Month
